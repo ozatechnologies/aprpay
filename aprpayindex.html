@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprameya Technologies Digital Payments</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 350px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Login Page Styles */
+        .login-page {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .login-page h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-page input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-page button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-page button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Dashboard Styles */
+        .dashboard {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .balance {
+            padding: 20px;
+            font-size: 24px;
+            color: #28a745;
+        }
+
+        .info, .transaction-history {
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .transaction-history h3 {
+            font-size: 18px;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .transaction {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .transaction:last-child {
+            border-bottom: none;
+        }
+
+        .transaction-date {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .transaction-amount {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Page -->
+        <div class="login-page" id="loginPage">
+            <h1>Login to Aprameya Technologies</h1>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button onclick="validatePassword()">Login</button>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div class="dashboard" id="dashboard">
+            <div class="header">
+                <h1>Aprameya Technologies</h1>
+                <p>UID: 1234567890</p>
+            </div>
+            <div class="balance">
+                Balance: <span id="balance">$31,000.00 USD</span>
+            </div>
+            <div class="info">
+                <p>Account Holder: Aprameya Technologies</p>
+                <p>Account Type: Business</p>
+                <p>Account Status: Active</p>
+            </div>
+            <div class="transaction-history">
+                <h3>Transaction History</h3>
+                <div class="transaction">
+                    <div>
+                        <p>Payment Received</p>
+                        <p class="transaction-date">Oct 25, 2024</p>
+                    </div>
+                    <div class="transaction-amount">+$500.00</div>
+                </div>
+                <div class="transaction">
+                    <div>
+                        <p>Service Payment</p>
+                        <p class="transaction-date">Oct 22, 2024</p>
+                    </div>
+                    <div class="transaction-amount">-$150.00</div>
+                </div>
+                <div class="transaction">
+                    <div>
+                        <p>Withdrawal</p>
+                        <p class="transaction-date">Oct 20, 2024</p>
+                    </div>
+                    <div class="transaction-amount">-$2000.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to validate password and show the dashboard
+        function validatePassword() {
+            const passwordInput = document.getElementById('password').value;
+            const correctPassword = "9824421371";
+
+            if (passwordInput === correctPassword) {
+                // Hide login page and show dashboard
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
